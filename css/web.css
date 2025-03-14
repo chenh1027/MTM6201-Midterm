@@ -1,0 +1,74 @@
+/* 用比例计算就能平均分配宽度 */
+.banner-logos img {
+  width: calc(100% / 7);
+  height: auto;
+}
+
+/* 用容器来设置位置和样式 颜色 背景 iframe是inline-block */
+.header-video {
+  display: flex; /* 使用 Flexbox 居中 */
+  width: 100%; /* 让容器宽度占满页面 */
+  justify-content: center; /* 水平居中 */
+}
+
+.header-video iframe {
+  width: 100%;
+  aspect-ratio: 16 / 9; /* 设置宽高比例，自动调整高度 */
+  border-radius: 12px;
+}
+
+/* flex是从左到右 block是一整行 inline block是同一行 */
+.main-title {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+/* grid设置之后子元素自动，只需要设置大小比例 */
+
+.main-benefits-cards,
+.main-courses-cards,
+.main-testimonials-cards,
+.main-pricing-cards {
+  width: 100%; /* 占满父容器宽度 */
+  display: grid;
+  gap: var(--space-lg); /* 列间距 */
+  padding: 0; /* 去掉内边距 */
+}
+
+.main-benefits-cards {
+  grid-template-columns: repeat(3, 1fr); /* 3 列 */
+}
+
+.main-courses-cards,
+.main-testimonials-cards,
+.main-pricing-cards {
+  grid-template-columns: repeat(2, 1fr); /* 2 列 */
+}
+
+.main-pricing-cards {
+  padding: 80px;
+  background: var(--Absolute-White, #fff);
+}
+
+.pricing-card {
+  display: flex;
+  flex-direction: column;
+  padding: 50px 30px 30px 30px;
+  align-items: center;
+  flex: 1 0 0;
+  border-radius: 12px;
+  border: 1px solid var(--White-95, #f1f1f3);
+  background: var(--White-99, #fcfcfd);
+}
+
+.main-faq {
+  display: flex;
+  align-items: flex-start;
+  gap: 120px;
+  border-radius: 12px;
+  border: 1px solid var(--White-95, #f1f1f3);
+  background: var(--White-99, #fcfcfd);
+  padding: 100px;
+}

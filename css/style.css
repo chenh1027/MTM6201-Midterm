@@ -1,0 +1,589 @@
+/* 颜色模版样式 design style */
+:root {
+  /* main color */
+  --primary-color: #ff9500;
+  --secondary-color: #fff4e5;
+
+  /* text color */
+  --text-color-primary: #262626;
+  --text-color-dark: #333333;
+  --text-color-normal: #4c4c4d;
+  --text-color-small: #59595a;
+
+  /* other colors */
+  --background-color: #f7f7f8;
+  --line-button-color: #f1f1f3;
+  --White-95: #f1f1f3;
+  --White-99: #fcfcfd;
+  --Absolute-White: #fff;
+
+  /* font family */
+  --font-family: "Be Vietnam Pro", sans-serif;
+
+  /* gap and space */
+  --space-lg: 30px;
+  --space-md: 20px;
+  --phone-margin: 16px; /* 手机端边距 */
+  --loptop-margin: 80px; /* 平板端边距 */
+  --web-margin: 162px; /* 桌面端边距 */
+
+  --border-ridius-lg: 12px;
+  --border-ridius-md: 8px;
+  --border-ridius-sm: 6px;
+}
+
+/* 第二步：通用样式 Global Styles */
+html {
+  font-size: 14px;
+  box-sizing: border-box;
+}
+
+*,
+*:after,
+*:before {
+  box-sizing: inherit;
+}
+
+body {
+  font-family: var(--font-family);
+  color: var(--text-color-normal);
+  line-height: 1.5;
+  background-color: var(--background-color);
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--font-family);
+  font-weight: bold;
+  margin-top: 1.5em;
+  margin-bottom: 0.5em;
+}
+
+h1 {
+  font-size: clamp(2rem, 5vw, 3rem); /* 32px - 48px */
+}
+
+h2 {
+  font-size: clamp(1.75rem, 4.5vw, 2.5rem); /* 28px - 40px */
+}
+
+h3 {
+  font-size: clamp(1.5rem, 4vw, 2rem); /* 24px - 32px */
+}
+
+h4 {
+  font-size: clamp(1.25rem, 3.5vw, 1.75rem); /* 20px - 28px */
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  /* object-fit: cover; s  */
+}
+
+/* 第三步：整体页面布局 web page layout（header main footer container） */
+.container {
+  background: var(--background-color);
+  max-width: 358px; /* 设计稿的手机宽度 */
+  padding: 0 var(--phone-margin);
+  margin: 0 auto;
+}
+
+/* footer style */
+.footer-contant {
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  /* justify-content: space-between; */
+  align-items: flex-start;
+  /* gap: 50px; */
+  background: var(--Absolute-White, #fff);
+  padding: 3.58rem 1.4rem 1.7rem 1.4rem;
+}
+
+.footer-links {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+}
+
+.social-icons {
+  display: flex;
+}
+
+.social-icons a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  background-color: #eee;
+  border-radius: 10%;
+  margin-right: 0.5rem;
+  text-decoration: none;
+  color: #333;
+}
+
+/* 第四步：组件样式 Component Styles（card butto form）*/
+.card {
+  display: flex;
+  width: 100%; /* 占满 Grid 容器的列宽 */
+  flex-direction: column;
+  /* padding: 50px; */
+  border: 1px solid var(--White-95, #f1f1f3);
+  border-radius: var(--border-ridius-lg);
+  background-color: var(--White-99, #fcfcfd);
+  justify-content: center;
+  margin-bottom: 1.425rem;
+}
+
+button {
+  display: inline-block;
+  font-size: 1rem;
+  font-weight: medium;
+  color: var(--text-color-primary);
+  border-radius: var(--border-ridius-md);
+  border: none;
+  cursor: pointer;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.main-title {
+  display: flex;
+  flex-direction: column;
+  /* justify-content: space-between;
+  align-items: flex-end; */
+  margin-bottom: 2.85rem;
+}
+
+.outcome-word {
+  color: var(--primary-color);
+}
+
+/* 第五步：页面样式 Page Styles（home about contact）*/
+
+/* nav style */
+.nav-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center; /* 垂直居中对齐 */
+  justify-content: center;
+  gap: 1rem;
+}
+
+.nav-bar-links {
+  display: none;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.nav-bar-button {
+  display: flex;
+  margin-left: auto;
+  gap: 1rem;
+}
+
+/* banner style */
+.banner-contant {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 2.15rem;
+}
+
+.banner-contant-unlock {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  background-color: var(--White-99, #fcfcfd);
+  border-radius: var(--border-ridius-sm);
+  padding: 1rem;
+  gap: 10px;
+  align-self: stretch;
+  flex-wrap: wrap;
+}
+
+.banner-unlock p {
+  font-size: 16px;
+  font-style: normal;
+  /* font-weight: SemiBold 600; */
+}
+
+.banner-contant-title {
+  font-size: 1.75rem;
+  /* font-weight: 500; */
+}
+
+/* banner button */
+.banner-buttons {
+  display: flex;
+  gap: 1rem;
+}
+
+.button-explore {
+  padding: 10px 20px;
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
+  border-radius: var(--border0ridius-sm);
+}
+.button-view {
+  padding: 10px 20px;
+  background-color: var(--White-99, #fcfcfd);
+  color: var(--text-color-primary);
+  border-radius: var(--border0ridius-sm);
+  border: 1px solid var(--White-95, #f1f1f3);
+}
+
+/* banner logos */
+.banner-logos {
+  display: flex;
+  align-items: center;
+  width: 100%; /* 占满父容器 */
+  border-radius: 12px;
+  border: 1px solid var(--White-95, #f1f1f3);
+  background: var(--White-99, #fcfcfd);
+  padding: 10px;
+  margin-bottom: var(--space-lg);
+}
+
+.banner-logos img {
+  max-width: 100px;
+  display: none; /* 先隐藏所有图片 */
+}
+
+.banner-logos img:nth-child(-n + 3) {
+  display: inline-block; /* 只显示前 3 张图片 */
+}
+
+/* video style */
+/* benefits style */
+.benefits-card {
+  padding: 2.25rem;
+}
+
+/* our courses style */
+.courses-card {
+  padding: 1.7rem;
+}
+
+.courses-card-info {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  font-size: 1rem;
+  gap: 0.75rem;
+  margin-top: 1.7rem;
+  margin-bottom: 1rem;
+}
+.courses-card-info p {
+  border-radius: 6px;
+  border: 1px solid var(--White-95, #f1f1f3);
+  background: var(--Absolute-White, #fff);
+  padding: 0.6rem 1rem;
+}
+
+.courses-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem 1.7rem;
+  gap: 8px;
+  align-self: stretch;
+  border: 1px solid var(--White-95, #f1f1f3);
+  border-radius: 6px;
+}
+
+/* Testimonials style */
+.testimonials-card {
+  padding: 1.7rem;
+}
+
+.testimonials-card-author {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
+}
+.author-info {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 1rem;
+}
+.author-read-story {
+  padding: 1rem 1.2rem;
+  border-radius: 0.45rem;
+}
+
+/* Pricing style */
+.pricing-toggle {
+  display: flex;
+  background: var(--Absolute-White, #fff);
+  padding: 1.4rem;
+  border-radius: var(--border-ridius-md);
+  margin: 0 auto;
+}
+
+.toggle-btn {
+  flex: 1;
+  padding: 0.8rem 1.5rem;
+  font-weight: 500;
+  background: none;
+  border-radius: var(--border-ridius-md);
+}
+
+.toggle-btn.active {
+  background-color: #f5a742;
+  color: white;
+}
+
+/* pricing style*/
+
+.pricing-card {
+  display: flex;
+  flex-direction: column;
+  padding: 2.15rem 1.4rem;
+  align-items: center;
+  flex: 1 0 0;
+  border-radius: 12px;
+  border: 1px solid var(--White-95, #f1f1f3);
+  background: var(--White-99, #fcfcfd);
+}
+
+.card-list {
+  display: flex;
+  border-radius: var(--border-ridius-sm);
+  border: 1px solid var(--White-95, #f1f1f3);
+  gap: 1rem;
+  padding: 1rem;
+}
+
+.card-btn {
+  display: flex;
+  padding: 20px 24px;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  align-self: stretch;
+  color: var(--Absolute-White);
+  border-radius: 0px 0px 8px 8px;
+  background: var(--primary-color);
+}
+
+/* main-faq style */
+.main-faq {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 1.5rem;
+  gap: 1.5rem;
+  border-radius: var(--border-ridius-lg);
+  background: var(--Absolute-White, #fff);
+}
+
+.home-faq-item {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  border: 1px solid #eee;
+  padding: 1.5rem;
+  border-radius: 8px;
+  margin-bottom: 15px;
+  overflow: hidden;
+}
+
+.home-faq-question {
+  padding: 20px;
+  font-weight: 500;
+  display: flex;
+
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  font-size: 16px;
+}
+/* 第六步：媒体查询 media  */
+/* --------------loptop style 768px-1440px-------------- */
+@media screen and (max-width: 1440px) and (min-width: 768px) {
+  html {
+    font-size: 16px; /* 1rem = 16px */
+  }
+
+  .container {
+    max-width: 1280px; /* 平板端 (适配 1280px 及以下) */
+    padding: 0 var(--loptop-margin);
+    margin: 0 auto;
+  }
+
+  .footer-contant {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 50px;
+    background: var(--Absolute-White, #fff);
+    padding: 100px 162px 30px 162px;
+  }
+
+  .main-title {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 2.85rem;
+  }
+  /* nav style */
+  .nav-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center; /* 垂直居中对齐 */
+    gap: 3.58em;
+  }
+
+  .nav-bar-links {
+    display: flex;
+    flex-direction: row;
+    gap: 1.75rem;
+  }
+
+  .nav-bar-hamburger {
+    display: none;
+  }
+
+  .banner-logos img {
+    max-width: 100%;
+    display: flex;
+    width: calc(100% / 7);
+    height: auto;
+  }
+
+  .header-video iframe {
+    width: 100%;
+    aspect-ratio: 16 / 9; /* 设置宽高比例，自动调整高度 */
+    border-radius: 12px;
+  }
+
+  .main-benefits-cards,
+  .main-courses-cards,
+  .main-testimonials-cards,
+  .main-pricing-cards {
+    width: 100%; /* 占满父容器宽度 */
+    display: grid;
+    gap: var(--space-lg); /* 列间距 */
+    padding: 0; /* 去掉内边距 */
+  }
+
+  .main-benefits-cards {
+    grid-template-columns: repeat(3, 1fr); /* 3 列 */
+  }
+
+  .main-courses-cards,
+  .main-testimonials-cards,
+  .main-pricing-cards {
+    grid-template-columns: repeat(2, 1fr); /* 2 列 */
+  }
+
+  .main-pricing-cards {
+    padding: 80px;
+    background: var(--Absolute-White, #fff);
+  }
+
+  .pricing-card {
+    display: flex;
+    flex-direction: column;
+    padding: 50px 30px 30px 30px;
+    align-items: center;
+    flex: 1 0 0;
+    border-radius: 12px;
+    border: 1px solid var(--White-95, #f1f1f3);
+    background: var(--White-99, #fcfcfd);
+  }
+}
+
+@media screen and (min-width: 1441px) {
+  .container {
+    max-width: 1595px; /* 网页 设计稿的主要内容宽度 */
+    margin: 0 auto;
+    box-sizing: border-box;
+    border-bottom: 1px solid var(--White-90, #e4e4e7);
+  }
+}
+
+/* ################# ABOUT PAGE #################  */
+.about-banner-content {
+  border-bottom: 1px solid var(--White-90, #e4e4e7);
+  padding-bottom: 2.5rem;
+}
+
+.about-achievement-card,
+.about-goals-card {
+  display: flex;
+  flex-direction: column;
+
+  padding: 1.7rem;
+  border-radius: 12px;
+  border: 1px solid var(--White-95, #f1f1f3);
+  background: var(--White-99, #fcfcfd);
+  margin-bottom: 1.425rem;
+}
+.about-achievement-card img {
+  width: 15%; /* 相对于父容器的宽度 */
+  height: auto;
+  max-width: 66px; /* 设置最大宽度 */
+}
+
+.about-goals-card img {
+  width: 15%; /* 相对于父容器的宽度 */
+  height: auto;
+  max-width: 66px; /* 设置最大宽度 */
+}
+
+.about-banner-second {
+  text-align: left; /* 文本左对齐 */
+  padding: 40px; /* 内边距 */
+}
+
+.about-banner-second h1 {
+  font-size: 2em; /* 标题字体大小 */
+  margin-bottom: 20px; /* 标题底部外边距 */
+  color: #333; /* 标题颜色 */
+}
+
+.about-banner-second p {
+  font-size: 1.1em; /* 段落字体大小 */
+  line-height: 1.6; /* 段落行高 */
+  color: #666; /* 段落颜色 */
+  margin-bottom: 30px; /* 段落底部外边距 */
+}
+
+.about-banner-second button {
+  background-color: #ffa500; /* 按钮背景色，橙色 */
+  color: white; /* 按钮文字颜色 */
+  padding: 1rem 1.4rem; /* 按钮内边距 */
+  border: none; /* 移除按钮边框 */
+  border-radius: var(--border-ridius-sm); /* 按钮圆角 */
+  cursor: pointer; /* 鼠标悬停时显示手型 */
+}
+
+@media screen and (max-width: 1440px) and (min-width: 768px) {
+  .about-achievements-container,
+  .about-goals-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.425rem;
+  }
+}
+
+/* ################# COURSES PAGE #################  */
