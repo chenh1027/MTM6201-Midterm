@@ -16,6 +16,7 @@
   --White-95: #f1f1f3;
   --White-99: #fcfcfd;
   --Absolute-White: #fff;
+  --Orange-90: #ffeacc;
 
   /* font family */
   --font-family: "Be Vietnam Pro", sans-serif;
@@ -27,9 +28,9 @@
   --loptop-margin: 80px; /* 平板端边距 */
   --web-margin: 162px; /* 桌面端边距 */
 
-  --border-ridius-lg: 12px;
-  --border-ridius-md: 8px;
-  --border-ridius-sm: 6px;
+  --border-radius-lg: 12px;
+  --border-radius-md: 8px;
+  --border-radius-sm: 6px;
 }
 
 /* 第二步：通用样式 Global Styles */
@@ -57,7 +58,7 @@ h3,
 h4 {
   font-family: var(--font-family);
   font-weight: bold;
-  margin-top: 1.5em;
+  /* margin-top: 1.5em; */
   margin-bottom: 0.5em;
 }
 
@@ -81,6 +82,10 @@ img {
   max-width: 100%;
   height: auto;
   /* object-fit: cover; s  */
+}
+a {
+  color: inherit; /* 继承父元素颜色 */
+  text-decoration: none; /* 去掉下划线 */
 }
 
 /* 第三步：整体页面布局 web page layout（header main footer container） */
@@ -149,6 +154,12 @@ button {
   cursor: pointer;
 }
 
+button:focus,
+a:focus {
+  outline: 2px solid var(--primary-color);
+  outline-offset: 2px;
+}
+
 form {
   display: flex;
   flex-direction: column;
@@ -165,6 +176,51 @@ form {
 
 .outcome-word {
   color: var(--primary-color);
+} /* banner里面的重点字体 */
+
+.button-get-it {
+  display: flex;
+  padding: 10px 20px;
+  background-color: var(--primary-color);
+  color: var(--Absolute-White);
+  align-items: center;
+  justify-content: center;
+  margin: 1.2rem 1.4rem;
+  border-radius: var(--border-ridius-sm);
+}
+
+/* animation of button */
+button,
+.button-get-it,
+.button-explore,
+.button-view,
+.toggle-btn,
+.card-btn {
+  transition: transform 0.3s ease-in-out; /* 添加过渡动画 */
+}
+
+button:hover,
+.button-get-it:hover,
+.button-explore:hover,
+.button-view:hover,
+.toggle-btn:hover,
+.card-btn:hover {
+  transform: scale(1.1); /* 鼠标悬停时放大 10% */
+}
+
+/* ainimation of card */
+.card {
+  transition: all 0.3s ease-in-out;
+  border: 1px solid transparent; /* 默认无边框 */
+  background-color: #fff; /* 默认背景色 */
+  box-shadow: none; /* 默认无阴影 */
+}
+
+.card:hover {
+  border: 1px solid var(--primary-color); /* 悬停时边框变蓝 */
+  background-color: #f8f9fa; /* 悬停时背景变浅 */
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); /* 悬停时增加阴影 */
+  transform: translateY(-3px); /* 悬停时稍微上移 */
 }
 
 /* 第五步：页面样式 Page Styles（home about contact）*/
@@ -587,3 +643,51 @@ form {
 }
 
 /* ################# COURSES PAGE #################  */
+.courses-details-cards {
+  display: flex;
+  padding: 2.15rem;
+  /* align-items: center; */
+  justify-self: center;
+}
+
+.details-card:nth-child(odd) {
+  border-radius: var(--border-radius-sm);
+  border: 1px solid var(--White-95, #f1f1f3);
+  margin-bottom: 1.2rem;
+  padding: 1.7rem;
+}
+
+.details-card:nth-child(even) {
+  border-radius: var(--border-radius-sm);
+  border: 1px solid var(--primary-color);
+  box-shadow: 0px 0px 0px 4px #fff4e5;
+  margin-bottom: 1.2rem;
+  padding: 1.7rem;
+}
+
+.details-card-time {
+  display: inline-block;
+  padding: 0.7rem;
+  border-radius: var(--border-radius-sm);
+  background: var(--White-97, #f7f7f8);
+  margin-top: 1.7rem;
+}
+
+.time-hour {
+  background: var(--Orange-90, #ffeacc);
+}
+
+@media screen and (max-width: 1440px) and (min-width: 768px) {
+  .courses-details-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.425rem;
+  }
+
+  .details-card {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
